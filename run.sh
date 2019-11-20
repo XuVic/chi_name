@@ -1,1 +1,1 @@
-env FLASK_APP=app FLASK_ENV=development flask run
+env FLASK_APP=app FLASK_ENV=development flask run --host=0.0.0.0
