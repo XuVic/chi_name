@@ -11,6 +11,6 @@ RUN python3 -m pip install --upgrade pip
 RUN pip --version
 
 ONBUILD COPY ./requirements.txt /app
-ONBUILD RUN pip install Flask google-auth-oauthlib SQLAlchemy google_spreadsheet
+ONBUILD RUN pip install -r requirements.txt
 ONBUILD COPY . /app/
 
