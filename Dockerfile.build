@@ -11,6 +11,6 @@ RUN python3 -m pip install --upgrade pip
 RUN pip --version
 
 ONBUILD COPY ./requirements.txt /app
-ONBUILD RUN python3 -m pip install -r requirements.txt
+ONBUILD RUN pip install Flask 
 ONBUILD COPY . /app/
 
