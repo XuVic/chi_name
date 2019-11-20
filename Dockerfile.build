@@ -1,0 +1,16 @@
+FROM python:3.6.8-alpine
+
+RUN apk update
+RUN apk add sqlite dpkg-dev g++ gcc make patch ca-certificates libc-dev zlib-dev zlib git sqlite libffi-dev bash
+
+ENV WORKDIR_PATH=/app
+RUN mkdir $WORKDIR_PATH
+WORKDIR $WORKDIR_PATH
+
+RUN python3 -m pip install --upgrade pip
+RUN pip --version
+
+ONBUILD COPY ./requirements.txt /app
+ONBUILD RUN python3 -m pip install -r requirements.txt
+ONBUILD COPY . /app/
+
